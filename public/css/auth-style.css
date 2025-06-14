@@ -1,0 +1,218 @@
+/* CSS Reset & Basic Styling */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Card Container */
+.auth-container {
+    display: flex;
+    width: 100%;
+    max-width: 900px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Info Section (Sisi Kiri) */
+.auth-info {
+    background: linear-gradient(to bottom, #4f46e5, #6366f1);
+    color: #ffffff;
+    padding: 50px 40px;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.auth-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.auth-info .logo {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.auth-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Form Section (Sisi Kanan) */
+.auth-form {
+    padding: 50px 40px;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+.auth-form h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.auth-form .subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+.input-group input, .input-group textarea {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.input-group textarea {
+    padding: 12px 15px;
+    resize: vertical;
+}
+
+.input-group input:focus, .input-group textarea:focus {
+    outline: none;
+    border-color: #4f46e5;
+}
+
+.input-group input.is-invalid, .input-group textarea.is-invalid {
+    border-color: #e3342f;
+}
+
+.error-message {
+    color: #e3342f;
+    font-size: 0.875rem;
+    margin-top: -15px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.session-status {
+    margin-bottom: 20px;
+    background-color: #d1fae5;
+    color: #065f46;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+.form-options .remember-me {
+    display: flex;
+    align-items: center;
+    color: #555;
+    cursor: pointer;
+}
+
+.form-options .remember-me input {
+    margin-right: 8px;
+}
+
+.form-options a.forgot-password {
+    color: #4f46e5;
+    text-decoration: none;
+}
+
+.form-options a.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4f46e5;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #4338ca;
+}
+
+.switch-link {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.switch-link a {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.switch-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .auth-info {
+        display: none;
+    }
+
+    .auth-form {
+        width: 100%;
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-form {
+        padding: 30px 20px;
+    }
+    
+    .auth-form h2 {
+        font-size: 1.6rem;
+    }
+}
