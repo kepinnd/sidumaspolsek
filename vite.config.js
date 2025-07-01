@@ -8,9 +8,4 @@ export default defineConfig({
             refresh: true,
         }),
     ],
-    server: {
-    host: '192.168.1.13',
-    port: 5173, // default Vite port, bisa diubah
-    strictPort: true
-  },
 });

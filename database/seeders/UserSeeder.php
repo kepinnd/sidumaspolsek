@@ -32,8 +32,7 @@ class UserSeeder extends Seeder
             'email' => 'spkt1@polsek.com',
             'password' => Hash::make('password'),
             'role' => 'petugas_spkt',
-            'nik' => '1234567890123451', // Contoh NIK
-            'nrp' => '100200300',
+            'nik' => '1234567890123451',
             'alamat' => 'Jl. Polisi No. 1',
             'no_telp' => '081234567891'
         ]);

@@ -25,6 +25,9 @@ class User extends Authenticatable
         'nik',
         'alamat',
         'no_telp',
+        'otp_code',
+        'otp_expires_at',
+        'is_verified',
     ];
 
     /**

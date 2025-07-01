@@ -25,9 +25,19 @@ class AuthenticatedSessionController extends Controller
     public function store(LoginRequest $request): RedirectResponse
     {
         $request->authenticate();
+        $user = $request->user();
 
+        // Cek jika pengguna belum terverifikasi
+        if (!$user->is_verified) {
+            Auth::logout(); // Logout pengguna sementara
+
+            // Arahkan ke halaman OTP dengan pesan error
+            return redirect()->route('otp.verification.notice', ['email' => $user->email])
+                             ->withErrors(['email' => 'Akun Anda belum diverifikasi. Silakan klik "Kirim ulang OTP".']);
+        }
+
+        // Jika sudah terverifikasi, lanjutkan proses login normal
         $request->session()->regenerate();
-
         return redirect()->intended(route('dashboard', absolute: false));
     }
 

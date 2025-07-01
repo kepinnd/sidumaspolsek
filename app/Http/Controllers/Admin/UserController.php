@@ -81,8 +81,25 @@ class UserController extends Controller
         return redirect()->route('admin.users.index')->with('success', 'Pengguna berhasil diperbarui.');
     }
 
+    /**
+     * Remove the specified user from storage.
+     *
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function destroy(User $user)
     {
-       
+
+        // Jika pengguna yang akan dihapus adalah 'masyarakat',
+        // hapus semua pengaduan yang terkait dengannya terlebih dahulu.
+        if ($user->role === 'masyarakat') {
+            // Ini akan bekerja jika Anda sudah mendefinisikan relasi di model User
+            $user->pengaduanMasyarakat()->delete(); 
+        }
+
+        // Setelah pengaduan terkait dihapus (jika ada), baru hapus pengguna
+        $user->delete();
+
+        return redirect()->route('admin.users.index')->with('success', 'Pengguna dan semua data terkait berhasil dihapus.');
     }
 }
